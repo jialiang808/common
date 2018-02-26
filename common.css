@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+
+/* CSS Document */
+
+html {
+    width: 100%;
+    font-size: 62.5%;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {
+    font-family: "微软雅黑", 'Segoe UI', Tahoma, "宋体", SimSun, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #000;
+    /* background: #f0f0f0;*/
+    overflow-x: hidden;
+}
+
+.bodyhidden {
+    height: 100%;
+    overflow: hidden;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+ul,
+li,
+img,
+p,
+dl,
+dt,
+dd,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table {
+    list-style: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+li:focus,
+img:focus,
+p:focus,
+dl:focus,
+dt:focus,
+dd:focus,
+div:focus {
+    list-style: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+a {
+    color: #333;
+    cursor: pointer;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+/****** 弹框 ******/
+
+.mask-layer {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+}
+
+
+
+/****** 页面loading ******/
+
+.my-mask {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: RGBA(0, 0, 0, .65);
+    left: 0;
+}
+
+.my-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    width: 138px;
+    height: 136px;
+    margin-left: -69px;
+    margin-top: -68px;
+    background: url(../img/common/load.gif) no-repeat;
+}
+
+.popup-area {
+    display: none;
+    position: fixed;
+    width: 6rem !important;
+    z-index: 2001;
+    background: #ffffff;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 10px RGBA(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 10px RGBA(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px RGBA(0, 0, 0, 0.1);
+}
+
+.popup-area .popup-title {
+    padding: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.popup-area .popup-header {
+    display: none;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.popup-area .popup-flex {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.popup-area .popup-content {
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 0px 40px;
+}
+
+.popup-area .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 13px;
+    width: 13px;
+    display: none;
+}
+
+.popup-area .popup-buttons {
+    display: none;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 0px;
+}
+
+.popup-area .message-title {
+    width: 100%;
+    text-align: center;
+    color: #444;
+    font-size: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.popup-area .btn {
+    flex: 1;
+    -webkit-flex: 1;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.32rem;
+    border: 0;
+    background: #F76F03;
+    color: #fff;
+    cursor: pointer;
+    border-right: 1px solid #F76F03;
+    border-top: 1px solid #F76F03;
+}
+
+.popup-area .btn-default {
+    background: #fff;
+    color: #F76F03;
+}
+
+.popup-area .message-content {
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+    color: #918e8f;
+    line-height: 25px;
+}
+
+#popup-button-area #popup-ok-button {
+    height: 44px;
+    border-radius: 0;
+    line-height: 44px;
+    background: #f76f03;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+
+/****** 验证控件 ******/
+
+.validator {
+    display: inline-table;
+    position: relative;
+}
+
+.validator input {
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    font-family: 'Microsoft YaHei';
+}
+
+.validator .message-bottom {
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: -16px;
+    height: 16px;
+}
+
+.validator span.error {
+    padding-left: 5px;
+    color: #fd634f;
+    font-size: 12px;
+}
+
+.validator input.error,
+.validator textarea.error {
+    border: 1px solid #fd634f !important;
+}

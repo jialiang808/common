@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MVVM框架</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="MVVM框架" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="./common/flexible.js"></script>
+    <script src="./common/jquery.min.js"></script>
+    <script src="./common/common.js"></script>
+    <script src="data.js"></script>
+    <script src="./common/vue.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="listView">
+        <div class="search-layer" v-show="showSearch">
+            <div class="search-layer-container">
+                <div class="close-btn" v-on:click="showSearch=!showSearch"></div>
+                <div class="search-layer-box">
+                    <input type="text" v-model="searchKey">
+                </div>
+                <div class="search-layer-btn" v-on:click="search()">搜索</div>
+            </div>
+            <div class="close" v-on:click="showSearch=false"></div>
+        </div>
+        <div class="item-list-head head">
+            <a onclick="history.go(-1)" ng-if="back" class="back"></a>
+            <div class="item-list-search-box" v-on:click="showSearch=!showSearch">
+                <img src="./img/search.png">
+                <span style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;width: 5rem;" class="ng-binding">搜一搜</span>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="goods-list" class="has-footer">
+                <ul class="list">
+                    <li v-for="item in lists">
+                        <a href="javascript:;" v-on:click="goodsClick(item)">
+                        <img class="shopimg" v-bind:src="item.img" />
+                        <p class="goods-name">{{item.name}}</p>
+                        <p class="item-price">¥{{item.price}}</p>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-footer" v-if="isShowToMall">
+                <div>都不喜欢？去看看其他</div>
+                <div>
+                    <a href="more.html" class="footer-btn">去看看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
